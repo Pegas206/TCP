@@ -4,17 +4,18 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
-import java.net.ServerSocket;
 import java.net.*;
 import java.util.Scanner;
 
-public class ServerSocket {
+import static ru.netology.ServerConfig.*;
+
+public class Server {
 
 
     public static void main(String[] args) {
 
 
-        try (ServerSocket serverSocket = new ServerSocket(ServerConfig.port)) {
+        try (ServerSocket serverSocket = new ServerSocket(port)) {
             System.out.println("Сервер запущен");
 
 
@@ -36,6 +37,8 @@ public class ServerSocket {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 
